@@ -13,7 +13,19 @@ class NBAViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor.red
+        urlStr = NBAURLString
+        getData()
+        
+        let shared = UserDefaults(suiteName: "group.com.LWSports")
+        shared?.set("kobe", forKey: "lakers")
+        shared?.synchronize()
+
+        
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

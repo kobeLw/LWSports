@@ -14,6 +14,14 @@ class LaLigaViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        view.backgroundColor = UIColor.yellow
+        self.urlStr = LaLigaURLString
+        
+        self.getData()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

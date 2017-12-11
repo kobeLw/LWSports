@@ -10,6 +10,12 @@
 		A75F80A080B320E2007B336D /* Pods_LWSprots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF22903B7727C3D6584B1BAB /* Pods_LWSprots.framework */; };
 		D06718B51FB061F7007D901C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06718B41FB061F7007D901C /* AppDelegate.swift */; };
 		D06718BC1FB061F7007D901C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06718BB1FB061F7007D901C /* Assets.xcassets */; };
+		D07C025E1FCFE714007BEDE5 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07C025D1FCFE713007BEDE5 /* RevealServer.framework */; };
+		D0938ABD1FB5F8D600A92999 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0938A7E1FB5EDF500A92999 /* NotificationCenter.framework */; };
+		D0938AC01FB5F8D600A92999 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0938ABF1FB5F8D600A92999 /* TodayViewController.swift */; };
+		D0938AC31FB5F8D600A92999 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0938AC11FB5F8D600A92999 /* MainInterface.storyboard */; };
+		D0938AC71FB5F8D600A92999 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D0938ABC1FB5F8D600A92999 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D0938ACC1FB5FBF900A92999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06718BB1FB061F7007D901C /* Assets.xcassets */; };
 		D0B7577F1FB30ABF0055FEF0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7577E1FB30ABF0055FEF0 /* Macro.swift */; };
 		D0B757931FB3F4930055FEF0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B757921FB3F4160055FEF0 /* BaseViewController.swift */; };
 		D0B757941FB3F4930055FEF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7578D1FB3F4160055FEF0 /* ViewController.swift */; };
@@ -17,7 +23,37 @@
 		D0B757961FB3F4930055FEF0 /* LaLigaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7578E1FB3F4160055FEF0 /* LaLigaViewController.swift */; };
 		D0B757971FB3F4930055FEF0 /* UEFAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7578F1FB3F4160055FEF0 /* UEFAViewController.swift */; };
 		D0B757981FB3F4930055FEF0 /* PremierLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B757901FB3F4160055FEF0 /* PremierLeagueViewController.swift */; };
+		D0B7579C1FB3F9160055FEF0 /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7579B1FB3F9160055FEF0 /* NetManager.swift */; };
+		D0B7579E1FB432350055FEF0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7579D1FB432350055FEF0 /* API.swift */; };
+		D0D2752F1FB5A87400BB7255 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2752E1FB5A87400BB7255 /* Tools.swift */; };
+		D0D275331FB5AD0600BB7255 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D275311FB5AD0600BB7255 /* MatchTableViewCell.swift */; };
+		D0D275341FB5AD0600BB7255 /* MatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D275321FB5AD0600BB7255 /* MatchTableViewCell.xib */; };
+		D0D275371FB5AF4B00BB7255 /* MatchTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = D0D275321FB5AD0600BB7255 /* MatchTableViewCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0938AC51FB5F8D600A92999 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D06718A91FB061F7007D901C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0938ABB1FB5F8D600A92999;
+			remoteInfo = TodayWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0938A891FB5EDF500A92999 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D0938AC71FB5F8D600A92999 /* TodayWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0FD5353EAEA869730A0B6CAA /* Pods-LWSprots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWSprots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LWSprots/Pods-LWSprots.debug.xcconfig"; sourceTree = "<group>"; };
@@ -27,6 +63,14 @@
 		D06718B41FB061F7007D901C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D06718BB1FB061F7007D901C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D06718C01FB061F7007D901C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D07C025D1FCFE713007BEDE5 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
+		D0938A7E1FB5EDF500A92999 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D0938ABC1FB5F8D600A92999 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0938ABF1FB5F8D600A92999 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D0938AC21FB5F8D600A92999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D0938AC41FB5F8D600A92999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0938ACD1FB5FCAB00A92999 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
+		D0938ACE1FB5FCDD00A92999 /* LWSprots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LWSprots.entitlements; sourceTree = "<group>"; };
 		D0B7577E1FB30ABF0055FEF0 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		D0B7578C1FB3F4160055FEF0 /* NBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAViewController.swift; sourceTree = "<group>"; };
 		D0B7578D1FB3F4160055FEF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +78,11 @@
 		D0B7578F1FB3F4160055FEF0 /* UEFAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UEFAViewController.swift; sourceTree = "<group>"; };
 		D0B757901FB3F4160055FEF0 /* PremierLeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremierLeagueViewController.swift; sourceTree = "<group>"; };
 		D0B757921FB3F4160055FEF0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D0B7579B1FB3F9160055FEF0 /* NetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetManager.swift; sourceTree = "<group>"; };
+		D0B7579D1FB432350055FEF0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D0D2752E1FB5A87400BB7255 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		D0D275311FB5AD0600BB7255 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		D0D275321FB5AD0600BB7255 /* MatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +90,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07C025E1FCFE714007BEDE5 /* RevealServer.framework in Frameworks */,
 				A75F80A080B320E2007B336D /* Pods_LWSprots.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0938AB91FB5F8D600A92999 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0938ABD1FB5F8D600A92999 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +109,9 @@
 		47FEF901EF0693ACB07CE5A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D07C025D1FCFE713007BEDE5 /* RevealServer.framework */,
 				CF22903B7727C3D6584B1BAB /* Pods_LWSprots.framework */,
+				D0938A7E1FB5EDF500A92999 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D06718B31FB061F7007D901C /* LWSprots */,
+				D0938ABE1FB5F8D600A92999 /* TodayWidget */,
 				D06718B21FB061F7007D901C /* Products */,
 				D3BD2FB339FC56E498204C00 /* Pods */,
 				47FEF901EF0693ACB07CE5A8 /* Frameworks */,
@@ -70,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D06718B11FB061F7007D901C /* LWSprots.app */,
+				D0938ABC1FB5F8D600A92999 /* TodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,13 +139,28 @@
 		D06718B31FB061F7007D901C /* LWSprots */ = {
 			isa = PBXGroup;
 			children = (
+				D0938ACE1FB5FCDD00A92999 /* LWSprots.entitlements */,
 				D0B7578A1FB3F4160055FEF0 /* Classes */,
+				D0B7579A1FB3F7B50055FEF0 /* Mananger */,
+				D0D2752B1FB5A79C00BB7255 /* Category */,
 				D06718B41FB061F7007D901C /* AppDelegate.swift */,
 				D0B7577E1FB30ABF0055FEF0 /* Macro.swift */,
+				D0B7579D1FB432350055FEF0 /* API.swift */,
 				D06718BB1FB061F7007D901C /* Assets.xcassets */,
 				D06718C01FB061F7007D901C /* Info.plist */,
 			);
 			path = LWSprots;
+			sourceTree = "<group>";
+		};
+		D0938ABE1FB5F8D600A92999 /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D0938ACD1FB5FCAB00A92999 /* TodayWidget.entitlements */,
+				D0938ABF1FB5F8D600A92999 /* TodayViewController.swift */,
+				D0938AC11FB5F8D600A92999 /* MainInterface.storyboard */,
+				D0938AC41FB5F8D600A92999 /* Info.plist */,
+			);
+			path = TodayWidget;
 			sourceTree = "<group>";
 		};
 		D0B7578A1FB3F4160055FEF0 /* Classes */ = {
@@ -103,6 +180,7 @@
 				D0B7578E1FB3F4160055FEF0 /* LaLigaViewController.swift */,
 				D0B7578F1FB3F4160055FEF0 /* UEFAViewController.swift */,
 				D0B757901FB3F4160055FEF0 /* PremierLeagueViewController.swift */,
+				D0D275301FB5ACE900BB7255 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +191,32 @@
 				D0B757921FB3F4160055FEF0 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		D0B7579A1FB3F7B50055FEF0 /* Mananger */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7579B1FB3F9160055FEF0 /* NetManager.swift */,
+			);
+			path = Mananger;
+			sourceTree = "<group>";
+		};
+		D0D2752B1FB5A79C00BB7255 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D0D2752E1FB5A87400BB7255 /* Tools.swift */,
+			);
+			name = Category;
+			path = LWSprots/Category;
+			sourceTree = SOURCE_ROOT;
+		};
+		D0D275301FB5ACE900BB7255 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0D275311FB5AD0600BB7255 /* MatchTableViewCell.swift */,
+				D0D275321FB5AD0600BB7255 /* MatchTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D3BD2FB339FC56E498204C00 /* Pods */ = {
@@ -137,15 +241,35 @@
 				D06718AF1FB061F7007D901C /* Resources */,
 				CD90268C4577EDAA4CB45917 /* [CP] Embed Pods Frameworks */,
 				EF02F24A3F69FE705DBC6D10 /* [CP] Copy Pods Resources */,
+				D0938A891FB5EDF500A92999 /* Embed App Extensions */,
+				D07C025F1FCFE782007BEDE5 /* Integrate Reveal Server */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D0938AC61FB5F8D600A92999 /* PBXTargetDependency */,
 			);
 			name = LWSprots;
 			productName = LWSprots;
 			productReference = D06718B11FB061F7007D901C /* LWSprots.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D0938ABB1FB5F8D600A92999 /* TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0938AC81FB5F8D600A92999 /* Build configuration list for PBXNativeTarget "TodayWidget" */;
+			buildPhases = (
+				D0938AB81FB5F8D600A92999 /* Sources */,
+				D0938AB91FB5F8D600A92999 /* Frameworks */,
+				D0938ABA1FB5F8D600A92999 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWidget;
+			productName = TodayWidget;
+			productReference = D0938ABC1FB5F8D600A92999 /* TodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -160,6 +284,20 @@
 					D06718B01FB061F7007D901C = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					D0938ABB1FB5F8D600A92999 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -177,6 +315,7 @@
 			projectRoot = "";
 			targets = (
 				D06718B01FB061F7007D901C /* LWSprots */,
+				D0938ABB1FB5F8D600A92999 /* TodayWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +326,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D06718BC1FB061F7007D901C /* Assets.xcassets in Resources */,
+				D0D275341FB5AD0600BB7255 /* MatchTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0938ABA1FB5F8D600A92999 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0938ACC1FB5FBF900A92999 /* Assets.xcassets in Resources */,
+				D0938AC31FB5F8D600A92999 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,16 +369,32 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LWSprots/Pods-LWSprots-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWSprots/Pods-LWSprots-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D07C025F1FCFE782007BEDE5 /* Integrate Reveal Server */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal Server";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export REVEAL_SERVER_FILENAME=\"RevealServer.framework\"\n\n# Update this path to point to the location of RevealServer.framework in your project.\nexport REVEAL_SERVER_PATH=\"${SRCROOT}/${REVEAL_SERVER_FILENAME}\"\n\n# If configuration is not Debug, skip this script.\n[ \"${CONFIGURATION}\" != \"Debug\" ] && exit 0\n\n# If RevealServer.framework exists at the specified path, run code signing script.\nif [ -d \"${REVEAL_SERVER_PATH}\" ]; then\n\"${REVEAL_SERVER_PATH}/Scripts/copy_and_codesign_revealserver.sh\"\nelse\necho \"Cannot find RevealServer.framework, so Reveal Server will not be started for your app.\"\nfi";
 		};
 		EF02F24A3F69FE705DBC6D10 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -253,18 +418,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D275371FB5AF4B00BB7255 /* MatchTableViewCell.xib in Sources */,
 				D0B757931FB3F4930055FEF0 /* BaseViewController.swift in Sources */,
 				D0B757941FB3F4930055FEF0 /* ViewController.swift in Sources */,
 				D0B757951FB3F4930055FEF0 /* NBAViewController.swift in Sources */,
 				D0B757961FB3F4930055FEF0 /* LaLigaViewController.swift in Sources */,
+				D0B7579E1FB432350055FEF0 /* API.swift in Sources */,
+				D0B7579C1FB3F9160055FEF0 /* NetManager.swift in Sources */,
 				D0B757971FB3F4930055FEF0 /* UEFAViewController.swift in Sources */,
+				D0D275331FB5AD0600BB7255 /* MatchTableViewCell.swift in Sources */,
+				D0D2752F1FB5A87400BB7255 /* Tools.swift in Sources */,
 				D0B757981FB3F4930055FEF0 /* PremierLeagueViewController.swift in Sources */,
 				D0B7577F1FB30ABF0055FEF0 /* Macro.swift in Sources */,
 				D06718B51FB061F7007D901C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0938AB81FB5F8D600A92999 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0938AC01FB5F8D600A92999 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0938AC61FB5F8D600A92999 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0938ABB1FB5F8D600A92999 /* TodayWidget */;
+			targetProxy = D0938AC51FB5F8D600A92999 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0938AC11FB5F8D600A92999 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0938AC21FB5F8D600A92999 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D06718C11FB061F7007D901C /* Debug */ = {
@@ -378,11 +575,32 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0FD5353EAEA869730A0B6CAA /* Pods-LWSprots.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LWSprots/LWSprots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C986P73586;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = LWSprots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reus.networkextension.LWSprots;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-ObjC",
+					"-weak_framework",
+					RevealServer,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sports.lw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,12 +611,54 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 840128DA40DBE1A657EC0124 /* Pods-LWSprots.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LWSprots/LWSprots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C986P73586;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LWSprots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reus.networkextension.LWSprots;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sports.lw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D0938AC91FB5F8D600A92999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C986P73586;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sports.lw.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0938ACA1FB5F8D600A92999 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C986P73586;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sports.lw.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -421,6 +681,15 @@
 			buildConfigurations = (
 				D06718C41FB061F7007D901C /* Debug */,
 				D06718C51FB061F7007D901C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0938AC81FB5F8D600A92999 /* Build configuration list for PBXNativeTarget "TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0938AC91FB5F8D600A92999 /* Debug */,
+				D0938ACA1FB5F8D600A92999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

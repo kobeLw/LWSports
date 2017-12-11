@@ -7,7 +7,30 @@
 		<key>LWSprots.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>5</integer>
+		</dict>
+		<key>LwSportsToday.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>TodayWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D06718B01FB061F7007D901C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0938ABB1FB5F8D600A92999</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

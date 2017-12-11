@@ -17,15 +17,18 @@ PODS:
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
+  - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
   - AFNetworking
   - SDWebImage
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: e9c409e219060a93ecdf80aff93fbdff4d130cdc
+PODFILE CHECKSUM: 73a2e14aabd4f86ea327cbc5a3ee8194285ccfe9
 
 COCOAPODS: 1.3.1

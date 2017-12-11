@@ -14,6 +14,16 @@ class PremierLeagueViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor.purple
+        
+        urlStr = PremierLeagueURLString
+        getData()
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

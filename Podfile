@@ -8,4 +8,5 @@ target 'LWSprots' do
   # Pods for LWSprots
     pod 'AFNetworking'
     pod 'SDWebImage'
+    pod 'SVProgressHUD'
 end
