@@ -8,7 +8,7 @@
 
 import UIKit
 import AFNetworking
-import SVProgressHUD
+//import SVProgressHUD
 
 // 请求方法 GET / POST
 enum HTTPMethod {
@@ -44,7 +44,8 @@ class NetManager: AFHTTPSessionManager {
             if statusCode == 0 {
                 completion(json as Any?, true)
             } else {
-                SVProgressHUD.showError(withStatus: msgStr)
+//                SVProgressHUD.showError(withStatus: msgStr)
+                print(msgStr)
                 completion(json as Any?, false)
             }
         }

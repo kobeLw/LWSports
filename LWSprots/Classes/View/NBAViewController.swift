@@ -9,6 +9,7 @@
 import UIKit
 
 class NBAViewController: BaseViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +19,11 @@ class NBAViewController: BaseViewController {
         urlStr = NBAURLString
         getData()
         
-        let shared = UserDefaults(suiteName: "group.com.LWSports")
-        shared?.set("kobe", forKey: "lakers")
-        shared?.synchronize()
-
+//        shared = UserDefaults(suiteName: "group.com.LWSports")
+//        shared?.set("kobe", forKey: "lakers")
+//        shared?.synchronize()
+        
+        
         
     }
     

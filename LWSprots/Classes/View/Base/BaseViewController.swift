@@ -101,8 +101,8 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 self.tableV.reloadData()
                 if self.urlStr == NBAURLString
                 {
-                    let dataShare = UserDefaults(suiteName: "group.LWSports")
-                    dataShare?.set(self.dataArr, forKey: "com.reus.LWSprots")
+                    let dataShare = UserDefaults(suiteName: "group.com.LWSports")
+                    dataShare?.set(self.dataArr, forKey: "NBA_Data")
                 }
             }
         }

@@ -12,3 +12,5 @@ import UIKit
 let kScreenWidth = UIScreen.main.bounds.width
 let kScreenHeight = UIScreen.main.bounds.height
 
+let isIPhoneX = (kScreenHeight == 812) ? true : false
+

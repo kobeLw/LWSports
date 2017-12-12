@@ -24,6 +24,7 @@ class MatchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var team2Score: UILabel!
     
+    @IBOutlet weak var scroeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +36,8 @@ class MatchTableViewCell: UITableViewCell {
         team2Label.text = matchDict["Team2"] as? String
         
         
-        team1ImageV.sd_setImage(with: URL(string: (matchDict["Flag1"] as? String)!), completed: nil)
-        team2ImageV.sd_setImage(with: URL(string: (matchDict["Flag2"] as? String)!), completed: nil)
+        team1ImageV.sd_setImage(with: URL(string: (matchDict["Flag1_small"] as? String)!), completed: nil)
+        team2ImageV.sd_setImage(with: URL(string: (matchDict["Flag2_small"] as? String)!), completed: nil)
         
         team1Score.text = matchDict["Score1"] as? String
         team2Score.text = matchDict["Score2"] as? String

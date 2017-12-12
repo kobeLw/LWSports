@@ -10,3 +10,12 @@ target 'LWSprots' do
     pod 'SDWebImage'
     pod 'SVProgressHUD'
 end
+
+target 'TodayWidget' do
+    use_frameworks!
+    
+    # Pods for LWSprots
+    pod 'AFNetworking'
+    pod 'SDWebImage'    
+    
+end

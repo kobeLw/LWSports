@@ -44,6 +44,10 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             let button = UIButton(type: .custom)
             let buttonWidth = kScreenWidth / 4
             button.frame = CGRect(x: buttonWidth * CGFloat(i), y: 64, width: buttonWidth, height: 30)
+            if isIPhoneX
+            {
+                button.frame = CGRect(x: buttonWidth * CGFloat(i), y: 88, width: buttonWidth, height: 30)
+            }
             button.setTitle(buttonTittle[i], for: .normal)
             button.setTitleColor(UIColor.black, for: .normal)
             button.tag = 100 + i
