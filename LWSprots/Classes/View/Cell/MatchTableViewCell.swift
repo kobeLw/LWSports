@@ -26,6 +26,10 @@ class MatchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var scroeLabel: UILabel!
     
+    
+    @IBOutlet weak var centerLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,6 +45,19 @@ class MatchTableViewCell: UITableViewCell {
         
         team1Score.text = matchDict["Score1"] as? String
         team2Score.text = matchDict["Score2"] as? String
+        
+        if team1Score.text == "" || team2Score.text == "" {
+            
+            centerLabel.text = (matchDict["date"] as? String)! + "\n" + (matchDict["time"] as? String)!
+            centerLabel.font = UIFont.systemFont(ofSize: 13)
+            centerLabel.textColor = UIColor.red
+            return
+            
+        } else {
+            centerLabel.text = "-"
+            centerLabel.font = UIFont.systemFont(ofSize: 18)
+            centerLabel.textColor = UIColor.black
+        }
 
         if (team1Score.text! as NSString).intValue > (team2Score.text! as NSString).intValue {
             team1Score.textColor = UIColor.red

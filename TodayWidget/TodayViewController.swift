@@ -46,6 +46,13 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
         
     }
     
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .compact {
+            self.preferredContentSize = maxSize
+        } else if activeDisplayMode == .expanded {
+            self.preferredContentSize = CGSize(width: 0, height: 430)
+        }
+    }
     
     func createUI() {
         let titleArr = ["NBA","欧冠","西甲","英超"]
@@ -67,23 +74,40 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
         }
         
         
-        tableV = UITableView(frame: CGRect(x: 0, y: 40, width: kScreenWidth, height: 360), style: .plain)
+        tableV = UITableView(frame: CGRect(x: 0, y: 40, width: self.view.frame.size.width, height: 390), style: .plain)
 //        tableV.backgroundColor = UIColor.red
         tableV.delegate = self
         tableV.dataSource = self
         tableV.showsVerticalScrollIndicator = false
         tableV.showsHorizontalScrollIndicator = false
-        tableV.tableFooterView = UIView()
+        tableV.tableFooterView = tableviewFootView()
         self.tableV.register(UINib(nibName: "MatchTableViewCell", bundle: nil), forCellReuseIdentifier: "today")
         self.tableV.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "noMatch")
-
         view.addSubview(tableV)
+    }
+    
+    func tableviewFootView() -> UIView {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: tableV.frame.width, height: 30)
+        button.setTitle("全部比赛>>", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button .addTarget(self, action: #selector(allMatch), for: .touchUpInside)
+        return button
+    }
+    
+    // MARK: ------ 点击查看全部比赛 ------
+    @objc func allMatch() {
+        self.extensionContext?.open(URL(string: "LaLigaViewController://")!, completionHandler: { (isSuccess) in
+            
+        })
     }
     
     // MARK: ------ tableview delegate / datasource ------
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.dataArr?.count == 0 {
             return 1
+        } else if (self.dataArr?.count)! > 6 {
+            return 6
         }
         return (self.dataArr?.count)!
     }
@@ -116,19 +140,19 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
         return 60
     }
     
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 30
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.extensionContext?.open(URL(string: "NBAViewController://")!, completionHandler: { (isSuccess) in
+        self.extensionContext?.open(URL(string: "LaLigaViewController://")!, completionHandler: { (isSuccess) in
             
         })
     }
     
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        if activeDisplayMode == .compact {
-            self.preferredContentSize = maxSize
-        } else if activeDisplayMode == .expanded {
-            self.preferredContentSize = CGSize(width: 0, height: 400)
-        }
-    }
+    
+    
+    
     
     @objc func click(button: UIButton) {
         
@@ -168,12 +192,14 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
             {
                 let currentDate = ((response as! [String:Any])["result"] as! [String:Any])["begin"] as! String
                 let dataDic = ((response as! [String:Any])["result"] as! [String:Any])["data"]
-                let dict = (dataDic as! [String:Any])["full"] as! [[String:Any]]
+                let fullDict = (dataDic as! [String:Any])["full"] as! [[String:Any]]
                 let curDict = (dataDic as! [String:Any])["cur"] as! [[String:Any]]
+                let preDict = (dataDic as! [String:Any])["pre"] as! [[String:Any]]
                 
+                // 是否有正在打的比赛
                 if curDict.count == 0
                 {
-                    for matchDict in dict
+                    for matchDict in fullDict
                     {
                         if (matchDict["date"] as! String) == currentDate
                         {
@@ -181,6 +207,14 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
                         }
                     }
                 } else {
+                    
+                    for matchDict in fullDict
+                    {
+                        if (matchDict["date"] as! String) == currentDate
+                        {
+                            self.dataArr?.append(matchDict)
+                        }
+                    }
                     for matchDict in curDict
                     {
                         if (matchDict["date"] as! String) == currentDate
@@ -190,15 +224,16 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
                     }
                 }
                 
+                // 今天没有比赛
+                if self.dataArr?.count == 0
+                {
+                    self.dataArr = preDict
+                }
+                
                 self.tableV.reloadData()
                 
                 //                print(self.dataArr ?? "")
-//                if self.dataArr?.count == 0
-//                {
-//                    self.noMatchLabel.isHidden = false
-//                    self.tableV.isHidden = true
-//                    return
-//                }
+                
 //                self.tableV.reloadData()
 //                if self.urlStr == NBAURLString
 //                {

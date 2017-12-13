@@ -70,6 +70,7 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 let dataDic = ((response as! [String:Any])["result"] as! [String:Any])["data"]
                 let dict = (dataDic as! [String:Any])["full"] as! [[String:Any]]
                 let curDict = (dataDic as! [String:Any])["cur"] as! [[String:Any]]
+                let preDict = (dataDic as! [String:Any])["pre"] as! [[String:Any]]
                 
                 if curDict.count == 0
                 {
@@ -92,11 +93,16 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 
                 
 //                print(self.dataArr ?? "")
+//                if self.dataArr?.count == 0
+//                {
+//                    self.noMatchLabel.isHidden = false
+//                    self.tableV.isHidden = true
+//                    return
+//                }
+                // 今天没有比赛
                 if self.dataArr?.count == 0
                 {
-                    self.noMatchLabel.isHidden = false
-                    self.tableV.isHidden = true
-                    return
+                    self.dataArr = preDict
                 }
                 self.tableV.reloadData()
                 if self.urlStr == NBAURLString
@@ -127,7 +133,7 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 60
     }
     
 
