@@ -11,7 +11,6 @@
 		D050EEEF1FDFC1190083D44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06718BB1FB061F7007D901C /* Assets.xcassets */; };
 		D06718B51FB061F7007D901C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06718B41FB061F7007D901C /* AppDelegate.swift */; };
 		D06718BC1FB061F7007D901C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06718BB1FB061F7007D901C /* Assets.xcassets */; };
-		D07C025E1FCFE714007BEDE5 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07C025D1FCFE713007BEDE5 /* RevealServer.framework */; };
 		D0A53F821FDFCFDA00915A8F /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7577E1FB30ABF0055FEF0 /* Macro.swift */; };
 		D0A53F831FDFD14C00915A8F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7579D1FB432350055FEF0 /* API.swift */; };
 		D0A53F861FDFD3F900915A8F /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7579B1FB3F9160055FEF0 /* NetManager.swift */; };
@@ -85,7 +84,6 @@
 		D06718B41FB061F7007D901C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D06718BB1FB061F7007D901C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D06718C01FB061F7007D901C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D07C025D1FCFE713007BEDE5 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		D0938A7E1FB5EDF500A92999 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		D0938ACE1FB5FCDD00A92999 /* LWSprots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LWSprots.entitlements; sourceTree = "<group>"; };
 		D0A53F8F1FDFE26400915A8F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D07C025E1FCFE714007BEDE5 /* RevealServer.framework in Frameworks */,
 				A75F80A080B320E2007B336D /* Pods_LWSprots.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +130,6 @@
 		47FEF901EF0693ACB07CE5A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D07C025D1FCFE713007BEDE5 /* RevealServer.framework */,
 				CF22903B7727C3D6584B1BAB /* Pods_LWSprots.framework */,
 				D0938A7E1FB5EDF500A92999 /* NotificationCenter.framework */,
 				4FF80933172E6D6EE5F38F44 /* Pods_TodayWidget.framework */,
@@ -270,7 +266,6 @@
 				CD90268C4577EDAA4CB45917 /* [CP] Embed Pods Frameworks */,
 				EF02F24A3F69FE705DBC6D10 /* [CP] Copy Pods Resources */,
 				D0938A891FB5EDF500A92999 /* Embed App Extensions */,
-				D07C025F1FCFE782007BEDE5 /* Integrate Reveal Server */,
 				D0A53F701FDFCBF400915A8F /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -446,20 +441,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWSprots/Pods-LWSprots-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		D07C025F1FCFE782007BEDE5 /* Integrate Reveal Server */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Integrate Reveal Server";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export REVEAL_SERVER_FILENAME=\"RevealServer.framework\"\n\n# Update this path to point to the location of RevealServer.framework in your project.\nexport REVEAL_SERVER_PATH=\"${SRCROOT}/${REVEAL_SERVER_FILENAME}\"\n\n# If configuration is not Debug, skip this script.\n[ \"${CONFIGURATION}\" != \"Debug\" ] && exit 0\n\n# If RevealServer.framework exists at the specified path, run code signing script.\nif [ -d \"${REVEAL_SERVER_PATH}\" ]; then\n\"${REVEAL_SERVER_PATH}/Scripts/copy_and_codesign_revealserver.sh\"\nelse\necho \"Cannot find RevealServer.framework, so Reveal Server will not be started for your app.\"\nfi";
 		};
 		EF02F24A3F69FE705DBC6D10 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -655,7 +636,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(SRCROOT)",
 				);
 				INFOPLIST_FILE = LWSprots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -669,8 +649,6 @@
 					"-framework",
 					"\"SVProgressHUD\"",
 					"-ObjC",
-					"-weak_framework",
-					RevealServer,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sports.lw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
