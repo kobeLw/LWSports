@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -45,6 +46,10 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.tableV.showsHorizontalScrollIndicator = false
         self.tableV.register(UINib(nibName: "MatchTableViewCell", bundle: nil), forCellReuseIdentifier: "cellid")
         self.tableV.tableFooterView = UIView()
+        self.tableV.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            self.dataArr?.removeAll()
+            self.getData()
+        })
         view.addSubview(self.tableV)
         
         noMatchLabel = UILabel(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 40))
@@ -65,51 +70,51 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         NetManager.shared.request(URLString: urlStr!, parameters: nil) { (response, isSuccess) in
             
+            self.tableV.mj_header.endRefreshing()
+            
             if isSuccess
             {
+                let currentDate = ((response as! [String:Any])["result"] as! [String:Any])["begin"] as! String
                 let dataDic = ((response as! [String:Any])["result"] as! [String:Any])["data"]
-                let dict = (dataDic as! [String:Any])["full"] as! [[String:Any]]
+                let fullDict = (dataDic as! [String:Any])["full"] as! [[String:Any]]
                 let curDict = (dataDic as! [String:Any])["cur"] as! [[String:Any]]
                 let preDict = (dataDic as! [String:Any])["pre"] as! [[String:Any]]
                 
+                // 是否有正在打的比赛
                 if curDict.count == 0
                 {
-                    for matchDict in dict
+                    for matchDict in fullDict
                     {
-                        if (matchDict["date"] as! String) == Tools().currentDate()
+                        if (matchDict["date"] as! String) == currentDate
                         {
                             self.dataArr?.append(matchDict)
                         }
                     }
                 } else {
+            
                     for matchDict in curDict
                     {
-                        if (matchDict["date"] as! String) == Tools().currentDate()
+                        if (matchDict["date"] as! String) == currentDate
+                        {
+                            self.dataArr?.append(matchDict)
+                        }
+                    }
+                    for matchDict in fullDict
+                    {
+                        if (matchDict["date"] as! String) == currentDate
                         {
                             self.dataArr?.append(matchDict)
                         }
                     }
                 }
                 
-                
-//                print(self.dataArr ?? "")
-//                if self.dataArr?.count == 0
-//                {
-//                    self.noMatchLabel.isHidden = false
-//                    self.tableV.isHidden = true
-//                    return
-//                }
                 // 今天没有比赛
                 if self.dataArr?.count == 0
                 {
                     self.dataArr = preDict
                 }
+                
                 self.tableV.reloadData()
-                if self.urlStr == NBAURLString
-                {
-                    let dataShare = UserDefaults(suiteName: "group.com.LWSports")
-                    dataShare?.set(self.dataArr, forKey: "NBA_Data")
-                }
             }
         }
     }

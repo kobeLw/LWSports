@@ -29,6 +29,8 @@ class MatchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var centerLabel: UILabel!
     
+    @IBOutlet weak var statusLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,7 +48,17 @@ class MatchTableViewCell: UITableViewCell {
         team1Score.text = matchDict["Score1"] as? String
         team2Score.text = matchDict["Score2"] as? String
         
-        if team1Score.text == "" || team2Score.text == "" {
+        
+        let matchStatus = matchDict["status"] as? String
+        
+        if matchStatus == "2"  {
+            // 比赛结束
+            self.statusLabel.text = matchDict["period_cn"] as? String
+        } else {
+            self.statusLabel.text = matchDict["status_cn"] as? String
+        }
+        
+        if matchStatus == "1" {
             
             centerLabel.text = (matchDict["date"] as? String)! + "\n" + (matchDict["time"] as? String)!
             centerLabel.font = UIFont.systemFont(ofSize: 13)

@@ -9,6 +9,7 @@ target 'LWSprots' do
     pod 'AFNetworking'
     pod 'SDWebImage'
     pod 'SVProgressHUD'
+    pod 'MJRefresh'
 end
 
 target 'TodayWidget' do

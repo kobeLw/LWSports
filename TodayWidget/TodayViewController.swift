@@ -196,7 +196,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
                 let curDict = (dataDic as! [String:Any])["cur"] as! [[String:Any]]
                 let preDict = (dataDic as! [String:Any])["pre"] as! [[String:Any]]
                 
-                // 是否有正在打的比赛
+                // 没有正在打的比赛
                 if curDict.count == 0
                 {
                     for matchDict in fullDict
@@ -207,15 +207,14 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
                         }
                     }
                 } else {
-                    
-                    for matchDict in fullDict
+                    for matchDict in curDict
                     {
                         if (matchDict["date"] as! String) == currentDate
                         {
                             self.dataArr?.append(matchDict)
                         }
                     }
-                    for matchDict in curDict
+                    for matchDict in fullDict
                     {
                         if (matchDict["date"] as! String) == currentDate
                         {
