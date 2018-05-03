@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -105,7 +106,7 @@
                 <outlet property="team2Label" destination="cdq-ia-6eT" id="ZFU-bj-2Vg"/>
                 <outlet property="team2Score" destination="OOV-RO-4n0" id="gxb-Sd-LX2"/>
             </connections>
-            <point key="canvasLocation" x="-780" y="-246"/>
+            <point key="canvasLocation" x="-870" y="-347"/>
         </tableViewCell>
     </objects>
 </document>

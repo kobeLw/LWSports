@@ -64,11 +64,6 @@ class NetManager: AFHTTPSessionManager {
         }
         
         
-        
-        
-        
-        
-        
     }
     
 }

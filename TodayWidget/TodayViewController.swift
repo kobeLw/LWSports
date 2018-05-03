@@ -75,7 +75,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
         
         
         tableV = UITableView(frame: CGRect(x: 0, y: 40, width: self.view.frame.size.width, height: 390), style: .plain)
-//        tableV.backgroundColor = UIColor.red
         tableV.delegate = self
         tableV.dataSource = self
         tableV.showsVerticalScrollIndicator = false
@@ -139,10 +138,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
         }
         return 60
     }
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 30
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.extensionContext?.open(URL(string: "LaLigaViewController://")!, completionHandler: { (isSuccess) in
@@ -231,14 +226,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UITableViewDelega
                 
                 self.tableV.reloadData()
                 
-                //                print(self.dataArr ?? "")
-                
-//                self.tableV.reloadData()
-//                if self.urlStr == NBAURLString
-//                {
-//                    let dataShare = UserDefaults(suiteName: "group.com.LWSports")
-//                    dataShare?.set(self.dataArr, forKey: "NBA_Data")
-//                }
             }
         }
         
